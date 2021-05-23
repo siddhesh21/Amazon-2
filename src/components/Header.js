@@ -7,9 +7,9 @@ import {
 
 function Header() {
   return (
-    <div>
-      {/** Top NAV */}
-      <div className="flex items-center p-1 flex-grow py-2 ring-2 ring-gray-600">
+    <header>
+      {/** Top NAV ----- ring-2 ring-gray-600 */}
+      <div className="flex items-center p-1 flex-grow py-2 ">
         <div className="mt-2 px-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
             src="https://links.papareact.com/f90"
@@ -62,8 +62,21 @@ function Header() {
       </div>
 
       {/**Bottom NAV */}
-      <div></div>
-    </div>
+      <div className="flex items-center space-x-4 p-2 pl-6 text-white text-sm ring-2 ring-gray-600 ">
+        <p className="link flex items-center">
+          <MenuIcon className="h-6 mr-1" /> All
+        </p>
+        <p className="link">Prime Video</p>
+        <p className="link">Amazon Business</p>
+        <p className="link">Today's Deals</p>
+        <p className="link hidden md:inline-flex">Electronics</p>
+        <p className="link hidden md:inline-flex">Developers</p>
+        <p className="link hidden md:inline-flex">Prime</p>
+        <p className="link hidden lg:inline-flex">Buy Again</p>
+        <p className="link hidden lg:inline-flex">Amazon Alexa Skills</p>
+        <p className="link hidden lg:inline-flex">Health Care & Fitness</p>
+      </div>
+    </header>
   );
 }
 
