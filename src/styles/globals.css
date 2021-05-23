@@ -17,6 +17,6 @@
         @apply cursor-pointer;
     }
     .link:hover {
-        @apply underline;
+        @apply underline transition duration-100 transform scale-110 text-yellow-400;
     }
 }

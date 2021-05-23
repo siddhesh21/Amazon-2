@@ -62,7 +62,10 @@ function Header() {
       </div>
 
       {/**Bottom NAV */}
-      <div className="flex items-center space-x-4 p-2 pl-6 text-white text-sm ring-2 ring-gray-600 ">
+      <div
+        className="flex items-center space-x-4 p-2 pl-6
+       text-white text-sm ring-2 ring-gray-600 "
+      >
         <p className="link flex items-center">
           <MenuIcon className="h-6 mr-1" /> All
         </p>
