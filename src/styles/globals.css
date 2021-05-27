@@ -23,7 +23,7 @@
         @apply p-2 text-xs bg-gradient-to-b from-yellow-300 to-yellow-500 rounded-sm;
     }
     .button {
-        @apply border-yellow-300;
+        @apply border-yellow-300 text-black;
     }
     .button:focus {
         @apply outline-none ring-2 ring-yellow-500;

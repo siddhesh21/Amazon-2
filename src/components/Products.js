@@ -73,10 +73,7 @@ function Products({ id, title, description, price, category, image }) {
       )}
       */}
 
-      <button
-        onClick={addItemToBasket}
-        className="button mt-auto md:text-sm text-black"
-      >
+      <button onClick={addItemToBasket} className="button mt-auto md:text-sm ">
         Add to Basket
       </button>
     </div>
