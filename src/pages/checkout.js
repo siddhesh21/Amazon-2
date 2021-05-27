@@ -3,11 +3,27 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import CheckoutProduct from "../components/CheckoutProduct";
 import Header from "../components/Header";
-import { selectItems } from "../slices/basketSlice";
+import { selectItems, selectTotal } from "../slices/basketSlice";
+import Currency from "react-currency-formatter";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
   const items = useSelector(selectItems);
+  const total = useSelector(selectTotal);
   const [session] = useSession();
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    // Call the Backend to create a CHECKOUT Session...
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
+  };
+
   return (
     <div className="">
       <Header />
@@ -44,7 +60,7 @@ function Checkout() {
         </div>
 
         {/** RIGHT */}
-        <div>
+        <div className="flex flex-col p-10 shadow-md">
           {items.length > 0 && (
             <>
               <h2 className="whitespace-nowrap">
@@ -55,6 +71,9 @@ function Checkout() {
               </h2>
 
               <button
+                role="link"
+                onClick={createCheckoutSession}
+                disabled={!session}
                 className={`button mt-2 ${
                   !session &&
                   "from-yellow-300 to-yellow-500 border-yellow-200 text-black cursor-not-allowed"
