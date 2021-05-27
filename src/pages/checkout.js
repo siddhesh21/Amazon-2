@@ -14,14 +14,18 @@ function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const [session] = useSession();
+
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
 
     // Call the Backend to create a CHECKOUT Session...
-    const checkoutSession = await axios.post("/api/create-checkout-session", {
-      items: items,
-      email: session.user.email,
-    });
+    const checkoutSession = await await axios.post(
+      "/api/create-checkout-session",
+      {
+        items: items,
+        email: session.user.email,
+      }
+    );
 
     // Redirect Customer to STRIPE CHECKOUT
     const result = await stripe.redirectToCheckout({
@@ -59,6 +63,7 @@ function Checkout() {
               key={i}
               id={item.id}
               title={item.title}
+              rating={item.rating}
               description={item.description}
               price={item.price}
               category={item.category}
