@@ -15,7 +15,11 @@ function Products({ id, title, description, price, category, image }) {
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
 
-  // const [hasPrime] = useState(Math.random() < 0.5);
+  {
+    /**
+  const [hasPrime] = useState(Math.random() < 0.5);
+ */
+  }
 
   const addItemToBasket = () => {
     const product = {
@@ -23,6 +27,7 @@ function Products({ id, title, description, price, category, image }) {
       title,
       description,
       price,
+      rating,
       category,
       image,
     };
