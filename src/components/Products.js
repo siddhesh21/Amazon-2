@@ -2,14 +2,14 @@ import { StarIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { useState } from "react";
 import Currency from "react-currency-formatter";
-import { useDespatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 
 function Products({ id, title, description, price, category, image }) {
-  const dispatch = useDespatch();
+  const dispatch = useDispatch();
 
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING

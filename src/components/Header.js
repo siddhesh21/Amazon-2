@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 function Header() {
   const [session] = useSession();
   const router = useRouter();
-  const iteams = useSelector(selectItems);
+  const items = useSelector(selectItems);
 
   return (
     <header>
