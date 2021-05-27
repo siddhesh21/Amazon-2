@@ -11,7 +11,8 @@ function Products({ id, title, description, price, category, image }) {
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
 
-  const [hasPrime] = useState(Math.random() < 0.5);
+  // const [hasPrime] = useState(Math.random() < 0.5);
+
   return (
     <div className="relative flex flex-col m-5 bg-black z-30 p-10">
       <p className="absolute top-2 right-2 text-xs text-yellow-300">
@@ -41,13 +42,14 @@ function Products({ id, title, description, price, category, image }) {
       <div className="mb-5">
         <Currency quantity={price} currency="EUR" />
       </div>
-
+      {/** 
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
           <img className="w-12" src="https://links.papareact.com/fdw" alt="" />
           <p className="text-xs text-gray-300">FREE Next-day Delivery</p>
         </div>
       )}
+      */}
 
       <button className="button mt-auto md:text-sm text-black">
         Add to Basket

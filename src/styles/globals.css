@@ -28,6 +28,9 @@
     .button:focus {
         @apply outline-none ring-2 ring-yellow-500;
     }
+    .button:hover {
+        @apply transition duration-100 transform scale-110;
+    }
     .button:active {
         @apply from-yellow-500;
     }
