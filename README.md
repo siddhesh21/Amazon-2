@@ -12,4 +12,4 @@
 
 ### 1. Start your Webhook listener either from VS terminal or windows cmd
 
-## App link deployed on Vercel: amazon-2-10o40wyuq-siddhesh21.vercel.app
+## App link deployed on Vercel: https://amazon-2-weld.vercel.app/
